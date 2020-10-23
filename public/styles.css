@@ -1,0 +1,27 @@
+.favicon{
+  width: 20%;
+  height: 20%;
+}
+
+.searchbar{
+  width: 90%;
+}
+.searchbarbox{
+  width: 100%;
+}
+.edgeL{
+  border-radius: 0 5px 5px 0;
+  width: 10%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+.edgeR{
+  border-radius:  5px 0 0 5px;
+}
+.cntr{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.pad{
+  margin-right: 2%;
+}

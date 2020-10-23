@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Homepage</title>
+</head>
+
+<body>
+  <div class="cntr">
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col">
+          <img class="favicon" src="/logo.svg" alt="logo">
+        </div>
+        <div class="col-6">
+          <form class="form-inline">
+            <div class="form-group-lg searchbar edgeR">
+              <input type="text" class="form-control-lg searchbarbox edgeR" name="search" placeholder="mens" value"">
+            </div>
+            <button type="submit" class="btn-lg btn-dark edgeL"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <button type="submit" name="button" class="btn-lg btn-dark pad">Design</button>
+          <button type="submit" name="button" class="btn-lg btn-dark pad">Print</button>
+          <button type="submit" name="button" class="btn-lg btn-dark pad">Cart</button>
+        </div>
+      </div>
+    </header>
+    <hr>
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="#">Men</a>
+        <a class="p-2 text-muted" href="#">Women</a>
+        <a class="p-2 text-muted" href="#">Custom</a>
+        <a class="p-2 text-muted" href="#">Design</a>
+        <a class="p-2 text-muted" href="#">Culture</a>
+        <a class="p-2 text-muted" href="#">Business</a>
+        <a class="p-2 text-muted" href="#">Politics</a>
+        <a class="p-2 text-muted" href="#">Opinion</a>
+        <a class="p-2 text-muted" href="#">Science</a>
+        <a class="p-2 text-muted" href="#">Health</a>
+        <a class="p-2 text-muted" href="#">Style</a>
+        <a class="p-2 text-muted" href="#">Travel</a>
+      </nav>
+    </div>
+    <hr>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/slide2.jpg" class="d-block w-100" alt="1st slide">
+        </div>
+        <div class="carousel-item">
+          <img src="/slide3.jpg" class="d-block w-100" alt="2nd slide">
+        </div>
+        <div class="carousel-item">
+          <img src="/slide1.jpg" class="d-block w-100" alt="3rd slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <hr>
+    <div class="cards">
+      <div class="row row-cols-1 row-cols-md-4">
+      <% for(i in products) { %>
+        <div class="col mb-4">
+        <div class="card h-100" style="width: 18rem;">
+          <img src=<%= products[i].image %> class="card-img-top" alt="product image">
+          <div class="card-body">
+            <h5 class="card-title"><%= products[i].name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">₹<%= products[i].price %></h6>
+            <p class="card-text"><%=products[i].desc %></p>
+            <a href="#" class="btn btn-dark">Buy</a>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "cstmdsgn",
+  "version": "1.0.0",
+  "description": "Ecommerce Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vedant Sahu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap-icons": "^1.0.0",
+    "ejs": "^3.1.5",
+    "els": "0.1.0-alpha",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  }
+}
