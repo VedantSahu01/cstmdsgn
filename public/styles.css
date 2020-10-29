@@ -2,7 +2,9 @@
   width: 20%;
   height: 20%;
 }
-
+.cartimg{
+  height: 15rem;
+}
 .searchbar{
   width: 90%;
 }

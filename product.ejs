@@ -1,0 +1,25 @@
+<%- include('header.html'); -%>
+<div class="row">
+    <div class="col-sm">
+      <img src=<%= product.image %> alt="Product image">
+    </div>
+    <div class="col-sm">
+      <h1><%= product.name %></h1>
+      <hr>
+      <%= product.desc %>
+      <h3>₹<%= product.price %></h3>
+      <form action="/cart" method="post">
+        <input type="hidden" name="name" value=<%= product.name %> >
+        <input type="hidden" name="image" value=<%= product.image %> >
+        <input type="hidden" name="price" value=<%= product.price %> >
+        <div class="form-group">
+          <label for="qty">Quantity</label>
+          <br>
+          <input type="number" name="quantity" id="qty" value=1>
+        </div>
+        <br>
+        <input type="submit" class='btn btn-dark' value="Buy Now">
+      </form>
+    </div>
+  </div>
+<%- include('footer.html'); -%>
