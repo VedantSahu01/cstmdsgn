@@ -29,11 +29,18 @@ var productSchema = new mongoose.Schema({
 var Cart = mongoose.model('Cart', cartSchema);
 var Product = mongoose.model('Product', productSchema );
 const initials = [{ name: 'DB Shirt', price: 100 ,quantity:1, tags:['shirt','men'], image: 'https://m.media-amazon.com/images/I/81ep28K+XYL._AC_UL480_FMwebp_QL65_.jpg'}, { name: 'B Shirt', price:200, quantity:1, image: 'https://m.media-amazon.com/images/I/81-5lUQGhjL._AC_UL480_FMwebp_QL65_.jpg', tags:['shirt','men']}];
-// Cart.deleteMany({}, function(err, docs) {
-//   if(err)
-//     console.log('Error on deleting initials');
-// });
+
 app.get('/', (req, res) => {
+  Product.count({},function(err,count){
+    if(!err){
+      if(!count){
+        Product.insertMany(initials, function(err, docs) {
+          if(err)
+            console.log('Error on inserting initials');
+        });
+      }
+    }
+  });
   Product.find({}, function(err,products){
     if(!err)
       res.render(__dirname + '/home.ejs', {products:products})
@@ -49,6 +56,9 @@ app.get('/cart', (req, res) => {
     else
       console.log("Error");
   });
+});
+app.get('/btn', (req, res) => {
+      res.sendFile(__dirname + "/button.html")
 });
 app.post('/cart', (req, res) => {
   Cart.insertMany([{
